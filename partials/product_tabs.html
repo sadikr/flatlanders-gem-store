@@ -1,0 +1,38 @@
+<div class="row product_description_panels">
+	<ul class="nav nav-tabs"> 
+		<li ng-class="{active: productTabsCtrl.isSelected(0)}" role="presentation">
+			<a href="#description" ng-click="productTabsCtrl.setTab(0)" data-toggle="tab">Description</a>
+		</li>
+		<li ng-class="{active: productTabsCtrl.isSelected(1)}" role="presentation">
+			<a href="#specs" ng-click="productTabsCtrl.setTab(1)" data-toggle="tab">Specs</a>
+		</li>
+		<li ng-class="{active: productTabsCtrl.isSelected(2)}" role="presentation">
+			<a href="#reviews" ng-click="productTabsCtrl.setTab(2)" data-toggle="tab">Reviews</a>
+		</li>
+	</ul>
+
+	<div class="tab-content">
+		<!-- Product Description -->	
+		<div id="description" class="tab-pan fade" ng-class="{in: productTabsCtrl.isSelected(0)}" ng-show="productTabsCtrl.isSelected(0)">
+			<p>{{product.description}}</p>
+		</div>
+		<!-- Product Specification -->
+		<div id="specs" class="tab-pan fade" ng-class="{in: productTabsCtrl.isSelected(1)}" ng-show="productTabsCtrl.isSelected(1)">
+			<ul>
+				<li><label>Name: </label>{{product.name}}</li>
+				<li><label>Shine: </label>{{product.shine}}</li>
+				<li><label>Rarity: </label>{{product.rarity}}</li>
+				<li><label>Color: </label>{{product.color}}</li>
+				<li><label>Faces: </label>{{product.faces}}</li>
+			</ul>
+		</div>
+		<!-- Product Reviews -->
+		<div id="reviews" class="tab-pan fade" ng-class="{in: productTabsCtrl.isSelected(2)}" 
+		ng-show="productTabsCtrl.isSelected(2)">
+			<!-- ========== Comments ========== -->
+			<review-comments></review-comments>
+			<!-- ========== Review Form ========== -->
+			<review-form></review-form>
+		</div>				
+	</div>
+</div>

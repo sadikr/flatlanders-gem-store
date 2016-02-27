@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="gemStore" lang="en">
+<head>
+	
+	<meta charset="utf-8">
+	<meta name="Flatlander's Gem Store" content="Flatlander's Gem Store - A practice work to learn AngularJS">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scaleable=no">
+
+	<title>Flatlander's Gem Store</title>
+	
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	
+	<script src="assets/js/jquery-2.2.1.min.js"></script>
+	<script src="assets/js/angular.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+
+	<script src="app.js"></script>
+	<script src="directives/navbar.js"></script>
+	<script src="directives/productTitle.js"></script>
+	<script src="directives/productImageGallery.js"></script>
+	<script src="directives/productTabs.js"></script>
+	<script src="directives/reviewForm.js"></script>
+	<script src="directives/reviewComments.js"></script>
+</head>
+<body >
+<!-- navbar directive-->
+<nav-bar></nav-bar>
+
+<!-- Container -->
+<div class="container list-group" style="padding-top:50px" ng-controller="StoreController">
+	<!-- product row -->
+	<div class="row product-container list-group-item" ng-repeat="product in products">
+		<div class="col-md-8 product-info pull-left">
+			<!-- Product Title directive  -->
+			<product-title></product-title>
+			<!-- Product Description, Specs, Reviews tab -->
+			<product-tabs></product-tabs>
+		</div>	
+
+		<div class="col-md-4 pull-right">
+			<!-- Product Gallery directive -->
+			<product-image-gallery></product-image-gallery>
+		</div>
+	</div>
+</div>
+</body>
+</html>

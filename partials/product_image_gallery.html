@@ -1,0 +1,14 @@
+<div class="product-image-container" 
+	ng-show="product.images.length">
+	<div class="row thumbnail-container">
+			<a href="javascript:void(0)" class="thumbnail">
+				<img ng-src="{{product.images[imageGalleryCtrl.currentImageIndex]}}" class="img-responsive" alt="diamond">
+			</a>
+	</div>
+	<div class="row image-items" >
+		<a href="javascript:void(0)" class="col-md-3" 
+			ng-repeat="image in product.images">
+			<img ng-src="{{image}}" ng-click="imageGalleryCtrl.setImageIndex($index)" class="img-responsive" alt="">
+		</a>
+	</div>
+</div>
