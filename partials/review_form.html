@@ -9,7 +9,7 @@ ng-submit="reviewForm.$valid && onSubmit(review)" novalidate>
 	<hr/>
 	<!-- ========== Stars ========== -->
 	<div class="form-group" ng-class="{'has-error': reviewForm.$submitted && 
-	reviewForm.stars.$dirty &&reviewForm.stars.$error.required}">
+	reviewForm.stars.$invalid &&reviewForm.stars.$error.required}">
 		<label class="control-label">Ratings:</label>
 		<select ng-model="review.stars" name="stars" class="form-control"
 		 required>
@@ -18,30 +18,30 @@ ng-submit="reviewForm.$valid && onSubmit(review)" novalidate>
 			</option>
 		</select>
 			<span class="help-inline control-label" ng-show="reviewForm.$submitted && 
-				reviewForm.stars.$dirty &&reviewForm.stars.$error.required">
+				reviewForm.stars.$invalid &&reviewForm.stars.$error.required">
 					Ratings are required.
 			</span>
 	</div>
 	<!-- ========== Author ========== -->
 	<div class="form-group" ng-class="{'has-error': reviewForm.$submitted && 
-	reviewForm.author.$dirty &&reviewForm.author.$error.required}">
+	reviewForm.author.$invalid &&reviewForm.author.$error.required}">
 		<label class="control-label">Author:</label>
 		<input type="text" placeholder="Author name" name="author" 
 		class="form-control" ng-model="review.author" required/>
 			<span class="help-inline control-label" ng-show="reviewForm.$submitted && 
-				reviewForm.author.$dirty &&reviewForm.author.$error.required">
+				reviewForm.author.$invalid &&reviewForm.author.$error.required">
 				Author name is required.
 			</span>
 	</div>
 	<!-- ========== Comment ========== -->
 	<div class="form-group" ng-class="{'has-error': reviewForm.$submitted && 
-	reviewForm.body.$dirty &&reviewForm.body.$invalid}">
+	reviewForm.body.$invalid &&reviewForm.body.$invalid}">
 		<label class="control-label">Comments:</label>
 		<textarea placeholder="Comments" name="body"
 		class="form-control" ng-model="review.body" required
 		ng-minlength="5" ng-maxlength="200"/>
 			<span class="help-inline control-label" ng-show="reviewForm.$submitted && 
-				reviewForm.body.$dirty &&reviewForm.body.$invalid">
+				reviewForm.body.$invalid &&reviewForm.body.$invalid">
 				We can accept comment with minimun 5 and maximum 200 words.	
 			</span>	
 	</div>
@@ -50,5 +50,4 @@ ng-submit="reviewForm.$valid && onSubmit(review)" novalidate>
 		<button type="submit" class="btn btn-default">Submit</button>
 		<button type="reset" class="btn btn-default">Reset</button>	
 	</div>
-
 </form>
